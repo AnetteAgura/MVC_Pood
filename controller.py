@@ -11,3 +11,7 @@ class Controller:
             print("OK!")
         except:
             print("Problem!")
+
+    def showItems(self):
+        items = self.model.showItems()
+        self.view.showItems(items)

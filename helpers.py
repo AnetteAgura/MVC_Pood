@@ -1,3 +1,6 @@
+from typing import List, Any
+
+import pandas as pd
 import exceptions
 from product import Product
 
@@ -15,3 +18,9 @@ def addItem(name, price, amount):
         raise exceptions.ItemExists("Item {} exists.".format(name))
     else:
         items.append(product)
+
+# show items
+def showItems():
+    global items
+    df = pd.DataFrame(items)
+    return df
