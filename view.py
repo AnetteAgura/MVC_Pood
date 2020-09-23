@@ -24,3 +24,7 @@ class View:
     def noItemError(self, name):
         print("Shop do no not consist item {}.".format(name))
         print("============================")
+
+    def deleteItem(self, name):
+        print("Deleting {} item.".format(name))
+        print("Item {} is deleted.".format(name))

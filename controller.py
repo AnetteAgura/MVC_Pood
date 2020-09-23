@@ -21,3 +21,10 @@ class Controller:
             self.view.showItem(item)
         except:
             self.view.noItemError(name)
+
+    def deleteItem(self, name):
+        try:
+            self.model.deleteItem(name)
+            self.view.deleteItem(name)
+        except:
+            print("Failed to delete item.")

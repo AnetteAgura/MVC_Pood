@@ -34,3 +34,13 @@ def showItem(name):
         else:
             continue
             raise exceptions.ItemExists("Not found {} item.".format(name))
+# delete ONE item
+def deleteItem(name):
+    global items
+    for item in items:
+        # if the name is the same as we search
+        if (item.getName() == name):
+            items.remove(item)
+        else:
+            continue
+            raise exceptions.ItemExists("Not found {} item.".format(name))

@@ -13,3 +13,6 @@ class Model:
     # show item
     def showItem(self, name):
         return helpers.showItem(name)
+    # delete item
+    def deleteItem(self, name):
+        helpers.deleteItem(name)

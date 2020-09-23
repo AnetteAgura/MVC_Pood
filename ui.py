@@ -23,3 +23,7 @@ shop.showItems()
 # show item
 shop.showItem("milk")
 shop.showItem("tea")
+
+shop.deleteItem("wine")
+
+shop.showItems()
