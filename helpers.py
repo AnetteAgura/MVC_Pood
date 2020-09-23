@@ -1,26 +1,25 @@
-from typing import List, Any
-
-import pandas as pd
 import exceptions
 from product import Product
 
-# represents shop structure
+# repsresents shop structure
 # list of Product type objects
 items = []
 
 # add item to items
 def addItem(name, price, amount):
     global items
-    # create product with required description
+    # create product with reqiure description
     product = Product(name, price, amount)
-    # check if item already exists
+    # control is item already exists
     if product in items:
-        raise exceptions.ItemExists("Item {} exists.".format(name))
+        raise exceptions.ItemExists("Item {} is exists".format(name))
     else:
         items.append(product)
-
 # show items
 def showItems():
     global items
-    df = pd.DataFrame(items)
-    return df
+    # control if items exists
+    if len(items) == 0:
+        raise exceptions.ItemExists("List of items is empty")
+    else:
+        return items
