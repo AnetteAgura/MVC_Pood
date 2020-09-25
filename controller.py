@@ -1,6 +1,4 @@
 import exceptions
-from helpers import items
-
 
 class Controller:
     def __init__(self, model, view):
@@ -52,5 +50,4 @@ class Controller:
             self.model.updateItem(name, price, amount)
             self.view.updateItem()
         except:
-            print("============================")
-            print("Item {} reading problem.".format(name))
+            self.view.noItemError(name)

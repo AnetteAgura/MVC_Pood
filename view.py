@@ -22,7 +22,8 @@ class View:
         print(df)
 
     def noItemError(self, name):
-        print("Shop do no not consist item {}.".format(name))
+        print("============================")
+        print("Shop do not consist item {}.".format(name))
         print("============================")
 
     def deleteItem(self, name):

@@ -28,6 +28,4 @@ shop.deleteItem("wine")
 
 shop.showItems()
 
-shop.updateItem("milk", 6.0, 6)
-
-shop.showItems()
+shop.updateItem("tea", 6.0, 6)

@@ -54,8 +54,7 @@ def updateItem(name, price, amount):
     global items
     for item in items:
         if (item.getName() == name):
-            item.price = item.setPrice(price)
-            item.amount = item.setAmount(amount)
+            price = item.setPrice(price)
+            amount = item.setAmount(amount)
         else:
-            continue
             raise exceptions.ItemNotExists("Item {} can't be updated, because it does not exist.".format(name))
