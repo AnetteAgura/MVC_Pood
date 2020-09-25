@@ -16,3 +16,9 @@ class Model:
     # delete item
     def deleteItem(self, name):
         helpers.deleteItem(name)
+    # delete all items
+    def deleteAll(self):
+        helpers.deleteAll()
+    # elemendi uuendamine
+    def updateItem(self, name, price, amount):
+        helpers.updateItem(name, price, amount)

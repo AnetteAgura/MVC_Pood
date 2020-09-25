@@ -1,4 +1,7 @@
 import exceptions
+from helpers import items
+
+
 class Controller:
     def __init__(self, model, view):
         self.model = model
@@ -12,8 +15,11 @@ class Controller:
             print("Problem!")
 
     def showItems(self):
-        items = self.model.showItems()
-        self.view.showItems(items)
+        try:
+            items = self.model.showItems()
+            self.view.showItems(items)
+        except:
+            print("No items to show.")
 
     def showItem(self, name):
         try:
@@ -28,3 +34,23 @@ class Controller:
             self.view.deleteItem(name)
         except:
             print("Failed to delete item.")
+
+    def deleteAll(self):
+        try:
+            self.model.deleteAll()
+            self.view.deleteAll()
+        except:
+            print("There are no items to show.")
+
+# elemendi uuendamine
+    def updateItem(self, name, price, amount):
+        if (price <= 0):
+            print("Price must be higher then 0 EUR")
+        elif (amount <= 0):
+            print("Amount must be higher than 0")
+        try:
+            self.model.updateItem(name, price, amount)
+            self.view.updateItem()
+        except:
+            print("============================")
+            print("Item {} reading problem.".format(name))

@@ -44,3 +44,18 @@ def deleteItem(name):
         else:
             continue
             raise exceptions.ItemExists("Not found {} item.".format(name))
+# delete all
+def deleteAll():
+    global items
+    items.clear()
+
+# update item
+def updateItem(name, price, amount):
+    global items
+    for item in items:
+        if (item.getName() == name):
+            item.price = item.setPrice(price)
+            item.amount = item.setAmount(amount)
+        else:
+            continue
+            raise exceptions.ItemNotExists("Item {} can't be updated, because it does not exist.".format(name))
