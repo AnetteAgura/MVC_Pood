@@ -12,6 +12,13 @@ class Controller:
         except:
             print("Problem!")
 
+    def restock(self, name, price, amount):
+        try:
+            self.model.restock(name, price, amount)
+            print("Ok!")
+        except:
+            print("Problem!")
+
     def showItems(self):
         try:
             items = self.model.showItems()

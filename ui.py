@@ -6,26 +6,22 @@ from shop import Shop
 from controller import Controller
 from model import Model
 from view import View
+from stock import Stock
+from model_stock import stockM
 
 # create products
-bread = Product("bread", 0.80, 10)
+bread = Product("bread", 0.80, 25)
 milk = Product("milk", 0.50, 50)
-wine = Product("wine", 5.60, 5)
+wine = Product("wine", 5.60, 20)
 
 # create shop and add products to shop
 shop = Controller(Model(Shop()), View())
-shop.addItem("bread", 0.80, 10)
-shop.addItem("milk", 0.50, 50)
-shop.addItem("wine", 5.60, 5)
+stock = Controller(stockM(Stock()), View())
+stock.addItem("bread", 0.80, 25)
+stock.addItem("milk", 0.50, 50)
+stock.addItem("wine", 5.60, 20)
 
-# show items
-shop.showItems()
-# show item
-shop.showItem("milk")
-shop.showItem("tea")
-
-shop.deleteItem("wine")
-
+shop.restock("milk", 0.50, 10)
 shop.showItems()
 
-shop.updateItem("tea", 6.0, 6)
+stock.showItems()
